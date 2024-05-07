@@ -4,19 +4,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Inventory {
-    private List<Guitar> guitars;
+    private List<GuitarSpec> guitars;
 
     public Inventory(){
         guitars = new LinkedList();
     }
 
     public void addGuitar(String serialNumber, String builder, String model, String type, String backWood, String topWood, double priece){
-        Guitar guitar = new Guitar(serialNumber, builder, model, type, backWood, topWood, priece);
+        GuitarSpec guitar = new GuitarSpec(serialNumber, builder, model, type, backWood, topWood, priece);
         guitars.add(guitar);
     }
 
     public Guitar getGuitar(String serialNumber){
-        for (Guitar guitar : guitars) {
+        for (GuitarSpec guitar : guitars) {
             if (guitar.getSerialNumber().equals(serialNumber)) {
                 return guitar;
             }
@@ -24,9 +24,9 @@ public class Inventory {
         return null;
     }
 
-    public List search(Guitar searchGuitar) {
+    public List search(GuitarSpec searchGuitar) {
         List mathcingGuitars = new LinkedList();
-        for (Guitar guitar : guitars) {
+        for (GuitarSpec guitar : guitars) {
 
             if(searchGuitar.getBuilder() != guitar.getBuilder()){
                 continue;

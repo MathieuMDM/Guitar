@@ -7,12 +7,12 @@ public class FindGuitarTester {
         Inventory inventory = new Inventory();
 
         initializeInventory(inventory);
-        Guitar whatEveLikes = new Guitar("V95693", Builder.FENDER.name(), "fender", Type.ELECTRIC.toString(), Wood.ALDER.toString(), Wood.OAK.toString(), 250);
+        GuitarSpec whatEveLikes = new GuitarSpec();
 
         List matchingGuitars = inventory.search(whatEveLikes);
 
         if (!matchingGuitars.isEmpty()){
-            System.out.println("Ewo moze spodoba ci sie gitara ?");
+            System.out.println("Ewo moze spodoba ci sie gitara ?" + matchingGuitars);
         } else {
             System.out.println("Przykro mi Ewo nic dla Ciebie nie znalazlem");
         }
